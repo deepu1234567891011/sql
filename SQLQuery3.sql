@@ -1,0 +1,8 @@
+create table employ(empid int primary key,empname varchar(60),empdeptid int)
+insert employ values(101,'Alice',1)
+insert employ values(102,'Bob',2)
+insert employ values(103,'Charlie',1)
+insert employ values(104,'David',3)
+insert employ values(105,'Eve',0)
+ select empname from employ where empdeptid=(select empdeptid from employ where empname='Alice')
+ select empname from employ where empdeptid=(select max(empdeptid) from employ)
